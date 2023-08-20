@@ -48,7 +48,7 @@ const DetailsBanner = ({ video, crew }) => {
                         <ContentWrapper >
                             <div className="content " >
                                 <div className="left">
-                                    {data.poster_path ? (<img className="posterImg" src={url.backdrop + data?.backdrop_path} alt="posterimg"/>) : (
+                                    {data.poster_path ? (<img className="posterImg" src={url.backdrop + data?.backdrop_path} alt="posterImg"/>) : (
                                         <img className="posterImg" src={PosterFallback} alt="posterImg"/>
                                     )}
 
