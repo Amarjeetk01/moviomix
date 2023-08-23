@@ -7,9 +7,10 @@ import TopRated from './topRated/TopRated'
 import Upcoming from './upComing/UPcoming'
 
 const Home = () => {
+ 
   return (
     <div className='homePage'>
-      <HeroBanner></HeroBanner>
+      <HeroBanner ></HeroBanner>
       <Treading></Treading>
       <Upcoming></Upcoming>
       <Popular></Popular>

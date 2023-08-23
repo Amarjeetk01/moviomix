@@ -10,6 +10,8 @@ import Home from './pages/home/Home'
 import  Deatails  from './pages/details/Deatails'
 import SearchResult from './pages/searchResult/SearchResult'
 import Explore from './pages/explore/Explore'
+import Visit from './pages/visit/Visit';
+import { MoveProvider } from './components/MoveContext';
 
 function App() {
   const dispatch = useDispatch();
@@ -50,9 +52,13 @@ function App() {
     dispatch(getGenres(allGeneres));
   }
 
+
+
+
   return (
+
     <>
-      
+      <MoveProvider>
       <BrowserRouter>
       <Header />
       <Routes>
@@ -60,12 +66,13 @@ function App() {
       <Route path="/:mediaType/:id" element={<Deatails/>}/>
       <Route path="/search/:query" element={<SearchResult/>}/>
       <Route path="/explore/:mediaType" element={<Explore/>}/>
+      <Route path="/:endpoint/visit" element={<Visit />} />
       <Route path="*" element={<PageNotFound/>}/>
       </Routes>
        <Footer></Footer>
       </BrowserRouter>
       
-     
+      </MoveProvider>
     </>
   )
 }
