@@ -8,17 +8,18 @@ import { useMove } from '../../../components/MoveContext'
 
 const Popular = () => {
     const navigate=useNavigate();
-    const { move, setMove } = useMove();
+    const { move, setMove } = useMove("popular");
     const [endpoint,setEndpoint]=useState("movie");
     const {data,loading}=useFetch(`/${endpoint}/popular`)
     const onTabChange=(tab)=>{
         setEndpoint(tab==="Movies"?"movie":"tv");
     }
     // console.log("popular move: "+move);
+     
     const more = () => {
-      setMove("popular"); 
-      console.log("popular move :"+move);
-    navigate(`/${endpoint}/visit`);
+      setMove("popular");
+      // console.log("popular move :"+move);
+    navigate(`/${endpoint}/visit/${move}`);
     }
     
   return (

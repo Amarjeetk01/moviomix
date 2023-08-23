@@ -20,7 +20,7 @@ const Upcoming = () => {
     const {move,setMove}=useMove();
     const more = () => {
       setMove(name); 
-      navigate(`/${endpoint}/visit`);
+      navigate(`/${endpoint}/visit/${move}`);
       }
   return (
     <div className="carouselSection">

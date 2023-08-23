@@ -17,7 +17,7 @@ const TopRated = () => {
     const {move,setMove}=useMove();
     const more = () => {
         setMove("top_rated"); 
-      navigate(`/${endpoint}/visit`);
+      navigate(`/${endpoint}/visit/${move}`);
       }
   return (
     <div className="carouselSection">

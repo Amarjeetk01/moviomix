@@ -3,7 +3,7 @@ import React, { createContext, useContext, useState } from 'react';
 const MoveContext = createContext();
 
 export function MoveProvider({ children }) {
-  const [move, setMove] = useState("");
+  const [move, setMove] = useState(null);
 
   return (
     <MoveContext.Provider value={{ move, setMove }}>
