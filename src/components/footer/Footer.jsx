@@ -16,18 +16,12 @@ const Footer = () => {
             <ContentWrapper>
                 <ul className="menuItems">
                     <li className="menuItem">Terms Of Use</li>
-                    <li className="menuItem">Privacy-Policy</li>
+                    <li className="menuItem">Privacy Policy</li>
                     <li className="menuItem">About</li>
                     <li className="menuItem">Blog</li>
-                    <li className="menuItem">FAQ</li>
                 </ul>
                 <div className="infoText">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur.
+                The project seems to be a web application for exploring and interacting with movie-related content, allowing users to view details about movies, search for movies, explore different genres, and more. It utilizes modern web technologies and React ecosystem tools for building a dynamic and user-friendly interface.
                 </div>
                 <div className="socialIcons">
                     <span className="icon">
