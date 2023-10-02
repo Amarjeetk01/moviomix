@@ -24,7 +24,7 @@ const Popular = () => {
   return (
     <div className="carouselSection">
         <ContentWrapper>
-        <span className="carouselTitle pointer-cursor">Popular</span>
+        <span className="carouselTitle">Popular</span>
             
         <SwitchTabs data={["Movies","TV"]} onTabChange={onTabChange}></SwitchTabs>
         </ContentWrapper>
