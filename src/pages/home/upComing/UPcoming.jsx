@@ -25,12 +25,12 @@ const Upcoming = () => {
   return (
     <div className="carouselSection">
         <ContentWrapper>
-        <span  onClick={more} className="carouselTitle pointer-cursor">{name==="upcoming"?("New"):("Airing")}</span>
+        <span   className="carouselTitle pointer-cursor">{name==="upcoming"?("New"):("Airing")}</span>
             
         <SwitchTabs data={["Movies","TV"]} onTabChange={onTabChange}></SwitchTabs>
         </ContentWrapper>
         
-        <Carousel data={data?.results} loading={loading } endpoint={endpoint}/>
+        <Carousel data={data?.results} loading={loading } endpoint={endpoint} more={more} />
     </div>
   )
 }

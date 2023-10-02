@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect} from 'react';
 import {BrowserRouter,Routes,Route} from "react-router-dom";
 import {fetchDataFromApi} from "./utilits/Api"
-import { useSelector, useDispatch } from 'react-redux'
+import {  useDispatch } from 'react-redux'
 import {getApiConfiguration, getGenres} from "./store/homeSlice"
 import Footer from './components/footer/Footer'
 import Header from './components/header/Header';
@@ -11,14 +11,12 @@ import  Deatails  from './pages/details/Deatails'
 import SearchResult from './pages/searchResult/SearchResult'
 import Explore from './pages/explore/Explore'
 import Visit from './pages/visit/Visit';
+import VisitTreading from './pages/home/treanding/VisitTreading';
 import { MoveProvider } from './components/MoveContext';
 
 function App() {
   const dispatch = useDispatch();
-  useEffect(()=>{
-    fetchApiConfig();
-    genresCall();
-  },[])
+
   const fetchApiConfig = async () => {
     try {
       const response = await fetchDataFromApi("/configuration");
@@ -52,7 +50,10 @@ function App() {
     dispatch(getGenres(allGeneres));
   }
 
-
+  useEffect(()=>{
+    fetchApiConfig();
+    genresCall();
+  },[]);
 
 
   return (
@@ -67,6 +68,8 @@ function App() {
       <Route path="/search/:query" element={<SearchResult/>}/>
       <Route path="/explore/:mediaType" element={<Explore/>}/>
       <Route path="/:endpoint/visit/:move" element={<Visit />} />
+      <Route path="/visit-treading/:endpoint" element={<VisitTreading />} />
+
       <Route path="*" element={<PageNotFound/>}/>
       </Routes>
        <Footer></Footer>
