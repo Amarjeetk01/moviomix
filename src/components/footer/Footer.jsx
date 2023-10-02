@@ -15,11 +15,7 @@ const Footer = () => {
         <footer className="footer">
             <ContentWrapper>
                 <ul className="menuItems">
-<<<<<<< HEAD
                     <li className="menuItem">PrivacyPolicy</li>
-=======
-                    <li className="menuItem">Privacy-Policy</li>
->>>>>>> origin/main
                     <li className="menuItem">About</li>
                     <li className="menuItem">Blog</li>
                 </ul>

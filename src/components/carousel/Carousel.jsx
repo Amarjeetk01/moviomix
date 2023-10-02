@@ -109,9 +109,14 @@ const Carousel = ({ data, loading, endpoint, title ,more  }) => {
                 <div className="posterBlock" onClick={more}>
                  
                 <Img src={rightMore}  alt="Load More" />
+
                 </div>
 
-               
+               <div className="textBlock">
+                        <span className="title">
+                        👆🏻Load More... 
+                        </span>
+                </div>
             </div>
         )}
     </div>
