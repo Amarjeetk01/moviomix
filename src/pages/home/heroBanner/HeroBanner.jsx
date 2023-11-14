@@ -23,6 +23,11 @@ function HeroBanner() {
       navigate(`/search/${query}`)
     }
   }
+  const handleSearchClick = (event) => {
+    if (query.length > 0) {
+      navigate(`/search/${query}`);
+    }
+  }
   const handleInputChange = (event) => {
     setQuery(event.target.value);
   }
@@ -36,7 +41,7 @@ function HeroBanner() {
       <div className="opacity_layer"></div>
       <ContentWrapper>
           <div className="heroBannerContent">
-            <span className="title">Welocome</span>
+            <span className="title">Welcome</span>
             <span className="subTitle">Embark on a Journey of Discovery: Unveil Countless Movies, TV Shows, and Fascinating Personalities. Start Exploring Today</span>
             <div className="searchInput">
             <input
@@ -46,7 +51,7 @@ function HeroBanner() {
               onChange={handleInputChange}
               value={query}
             />
-              <button>Search</button>
+              <button onClick={handleSearchClick}>Search</button>
             </div>
           </div>
           </ContentWrapper>
