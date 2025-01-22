@@ -1,7 +1,7 @@
  import React from 'react'
 import "./style.scss"
 import HeroBanner from './heroBanner/HeroBanner'
-import Treading from './treanding/Treading'
+import Treading from './trending/Treading'
 import Popular from './popular/Popular'
 import TopRated from './topRated/TopRated'
 import Upcoming from './upComing/UPcoming'

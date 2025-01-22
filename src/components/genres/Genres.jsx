@@ -6,18 +6,15 @@ import "./style.scss";
 const Genres = ({ data }) => {
     const { genres } = useSelector((state) => state.home);
 
-    return (
-        <div className="genres">
-            {data?.map((g) => {
-                if (!genres[g]?.name) return;
-                return (
-                    <div key={g} className="genre">
-                        {genres[g]?.name}
-                    </div>
-                );
-            })}
-        </div>
-    );
+    const genreList = data
+        ?.filter((g) => genres[g]?.name) // Filter out undefined or missing genre names
+        .map((g) => (
+            <div key={g} className="genre">
+                {genres[g]?.name}
+            </div>
+        ));
+
+    return <div className="genres">{genreList}</div>;
 };
 
 export default Genres;

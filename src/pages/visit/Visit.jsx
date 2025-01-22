@@ -24,14 +24,8 @@ const { move:next } = useMove();
   const [loading, setLoading] = useState(false);
   // const [next, setNext] = useState(move);
   // let next="top_rated";
-// console.log("visit move:"+move);
-  const fetchInitialData = async () => {
-    setLoading(true);
-    const res = await fetchDataFromApi(`/${endpoint}/${next}`);
-    setData(res);
-    setPageNum((prev) => prev + 1);
-    setLoading(false);
-  };
+console.log("visit move:",next);
+  
 
   const fetchNextPageData = async () => {
     const res = await fetchDataFromApi(`/${endpoint}/${next}?page=${pageNum}`);
@@ -50,6 +44,13 @@ const { move:next } = useMove();
     setData(null);
     setPageNum(1);
     // setNext(next);
+    const fetchInitialData = async () => {
+      setLoading(true);
+      const res = await fetchDataFromApi(`/${endpoint}/${next}`);
+      setData(res);
+      setPageNum((prev) => prev + 1);
+      setLoading(false);
+    };
     fetchInitialData();
   }, [endpoint, next]);
   

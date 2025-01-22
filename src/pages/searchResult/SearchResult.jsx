@@ -8,7 +8,7 @@ import { fetchDataFromApi } from "../../utilits/Api";
 import ContentWrapper from "../../components/contentWrapper/ContentWrapper";
 import MovieCard from "../../components/movieCard/movieCard";
 import Spinner from "../../components/spinner/Spinner";
-import noResults from "../../assets/no-results.png";
+// import noResults from "../../assets/no-results.png";
 import PageNotFound from "../404/PageNotFound";
 const SearchResult = () => {
     const [data, setData] = useState(null);
@@ -16,15 +16,7 @@ const SearchResult = () => {
     const [loading, setLoading] = useState(false);
     const { query } = useParams();
 
-    const fetchInitialData = async () => {
-
-        setLoading(true);
-        const res= await fetchDataFromApi(`/search/multi?query=${query}&page=${pageNum}`);
-        setData(res);
-        setPageNum((prev) => prev + 1);
-        setLoading(false);
-        
-    };
+    
 
     const fetchNextPageData = async () => {
       const res= await fetchDataFromApi(`/search/multi?query=${query}&page=${pageNum}`);
@@ -41,8 +33,19 @@ const SearchResult = () => {
 
     useEffect(() => {
         setPageNum(1);
+        const fetchInitialData = async () => {
+
+            setLoading(true);
+            const res= await fetchDataFromApi(`/search/multi?query=${query}&page=${pageNum}`);
+            setData(res);
+            setPageNum((prev) => prev + 1);
+            setLoading(false);
+            
+        };
         fetchInitialData();
     }, [query]);
+
+    console.log('data',data)
 
     return (
         <div className="searchResultsPage">
@@ -65,7 +68,7 @@ const SearchResult = () => {
                                 hasMore={pageNum <= data?.total_pages}
                                 loader={<Spinner />}
                             >
-                                {data?.results.map((item, index) => {
+                                {data?.results?.map((item, index) => {
                                     if (item.media_type === "person") return;
                                     return (
                                         <MovieCard

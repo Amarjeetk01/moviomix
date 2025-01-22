@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import useFetch from '../../../hook/useFetch'
 import Carousel from '../../../components/carousel/Carousel'
@@ -7,7 +7,7 @@ import Carousel from '../../../components/carousel/Carousel'
 
 const Recommendations = ({ mediaType, id }) => {
 
-    const { data, loading, error } = useFetch(
+    const { data, loading } = useFetch(
         `/${mediaType}/${id}/recommendations`);
     const title="Recommendations";
   return (
