@@ -26,7 +26,7 @@ MovioMix is a React-based web application that allows users to explore and disco
 - React Router: Declarative routing for React applications.
 - Redux Toolkit: State management library for React applications.
 - Axios: Promise-based HTTP client for making API requests.
-- Themoviedb.org API: Provides access to a vast database of movies and TV shows.
+- TMBD API: Provides access to a vast database of movies and TV shows.
 
 ## Installation
 
